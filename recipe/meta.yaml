@@ -7,8 +7,6 @@ package:
 source:
   url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
   sha256: 94533d0c5314419ab0cddb8d5ee9180c4aa4d9c716efb9bf85dc3fe13c34cd5c
-  patches:
-    - no-pyproject_toml.patch  # [win]
 
 build:
   number: 1000
@@ -18,6 +16,7 @@ requirements:
   host:
     - pip
     - python
+    - poetry
   run:
     - python
     - typing >=3.6,<4.0  # [py<35]
