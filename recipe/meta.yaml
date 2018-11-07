@@ -16,7 +16,7 @@ requirements:
   host:
     - pip
     - python
-    - poetry
+    - poetry  # [win]
   run:
     - python
     - typing >=3.6,<4.0  # [py<35]
