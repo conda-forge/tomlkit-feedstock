@@ -1,4 +1,4 @@
-{% set version = "0.4.6" %}
+{% set version = "0.5.0" %}
 
 package:
   name: tomlkit
@@ -6,13 +6,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
-  sha256: 8f857398aefa2c6a488c824f1e7f757e73a4f68246f1874f9df5eb53903231de
-  patches:
-    - no-pyproject_toml.patch  # [win]
+  sha256: 94533d0c5314419ab0cddb8d5ee9180c4aa4d9c716efb9bf85dc3fe13c34cd5c
 
 build:
   number: 1000
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script:
+    # Somehow, when pyproject.toml is present, it requires poetry on Windows.
+    # However, even with that dependency satisfied, we get:
+    # "tomlkit cannot depend on itself"
+    - del pyproject.toml  # [win]
+    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
   host:
