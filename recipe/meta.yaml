@@ -10,13 +10,17 @@ source:
 
 build:
   number: 1000
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script:
+    # Somehow, when pyproject.toml is present, it requires poetry on Windows.
+    # However, even with that dependency satisfied, we get:
+    # "tomlkit cannot depend on itself"
+    - del pyproject.toml  # [win]
+    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
   host:
     - pip
     - python
-    - poetry  # [win]
   run:
     - python
     - typing >=3.6,<4.0  # [py<35]
