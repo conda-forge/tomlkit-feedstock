@@ -15,6 +15,7 @@ build:
     # However, even with that dependency satisfied, we get:
     # "tomlkit cannot depend on itself"
     - del pyproject.toml  # [win]
+    - rm pyproject.toml  # [not win]
     - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
