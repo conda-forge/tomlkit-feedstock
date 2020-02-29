@@ -1,4 +1,4 @@
-{% set version = "0.5.8" %}
+{% set version = "0.5.11" %}
 
 package:
   name: tomlkit
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
-  sha256: 32c10cc16ded7e4101c79f269910658cc2a0be5913f1252121c3cd603051c269
+  sha256: f044eda25647882e5ef22b43a1688fb6ab12af2fc50e8456cdfc751c873101cf
 
 build:
   number: 0
@@ -16,7 +16,7 @@ build:
     # "tomlkit cannot depend on itself"
     - del pyproject.toml  # [win]
     - rm pyproject.toml  # [not win]
-    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
   host:
