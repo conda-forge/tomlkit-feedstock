@@ -29,6 +29,10 @@ requirements:
     - functools32 >=3.2.3,<4.0.0  # [py27]
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - tomlkit
 
