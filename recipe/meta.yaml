@@ -9,7 +9,7 @@ source:
   sha256: ac57f29693fab3e309ea789252fcce3061e19110085aa31af5446ca749325618
 
 build:
-  number: 1
+  number: 2
   script:
     # Somehow, when pyproject.toml is present, it requires poetry on Windows.
     # However, even with that dependency satisfied, we get:
