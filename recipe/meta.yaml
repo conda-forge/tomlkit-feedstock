@@ -9,13 +9,16 @@ source:
   sha256: ac57f29693fab3e309ea789252fcce3061e19110085aa31af5446ca749325618
 
 build:
-  number: 2
+  number: 3
   script:
     # Somehow, when pyproject.toml is present, it requires poetry on Windows.
     # However, even with that dependency satisfied, we get:
     # "tomlkit cannot depend on itself"
     - del pyproject.toml  # [win]
     - rm pyproject.toml  # [not win]
+    # Causes ClobberWarnings. Remove after https://github.com/sdispater/tomlkit/issues/69
+    - rd /s /q tests  # [win]
+    - rm -rf tests  # [not win]
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
