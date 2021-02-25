@@ -7,6 +7,9 @@ package:
 source:
   url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
   sha256: ac57f29693fab3e309ea789252fcce3061e19110085aa31af5446ca749325618
+  patches:
+    # Causes ClobberWarnings. Remove after https://github.com/sdispater/tomlkit/issues/69
+    - 0001-remove-tests-package.patch
 
 build:
   number: 3
