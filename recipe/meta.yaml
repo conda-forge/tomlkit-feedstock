@@ -1,4 +1,4 @@
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 package:
   name: tomlkit
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
-  sha256: 24d6049e0765aad9c56a30dfa60d54c69f39c142112a6c57ce8f1c285b6b9d8f
+  sha256: d7a454f319a7e9bd2e249f239168729327e4dd2d27b17dc68be264ad1ce36754
   patches:
     # Causes ClobberWarnings. Remove after https://github.com/sdispater/tomlkit/issues/69
     - 0001-remove-tests-package.patch
