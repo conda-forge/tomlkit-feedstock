@@ -1,4 +1,4 @@
-{% set version = "0.7.2" %}
+{% set version = "0.8.0" %}
 
 package:
   name: tomlkit
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
-  sha256: d7a454f319a7e9bd2e249f239168729327e4dd2d27b17dc68be264ad1ce36754
+  sha256: 29e84a855712dfe0e88a48f6d05c21118dbafb283bb2eed614d46f80deb8e9a1
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     # Somehow, when pyproject.toml is present, it requires poetry on Windows.
