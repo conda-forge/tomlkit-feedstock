@@ -1,11 +1,11 @@
-About tomlkit
-=============
+About tomlkit-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tomlkit-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/sdispater/tomlkit
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tomlkit-feedstock/blob/main/LICENSE.txt)
 
 Summary: Style preserving TOML library
 

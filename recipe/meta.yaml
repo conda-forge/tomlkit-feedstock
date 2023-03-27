@@ -1,4 +1,4 @@
-{% set version = "0.11.6" %}
+{% set version = "0.11.7" %}
 
 package:
   name: tomlkit
@@ -6,30 +6,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
-  sha256: 71b952e5721688937fb02cf9d354dbcf0785066149d2855e44531ebdd2b65d73
+  sha256: f392ef70ad87a672f02519f99967d28a4d3047133e2d1df936511465fbb3791d
 
 build:
   number: 0
   noarch: python
   script:
-    # Somehow, when pyproject.toml is present, it requires poetry on Windows.
-    # However, even with that dependency satisfied, we get:
-    # "tomlkit cannot depend on itself"
-    - rm pyproject.toml  # [not win]
-    # Causes ClobberWarnings. Remove after https://github.com/sdispater/tomlkit/issues/69
-    - rm -rf tests  # [not win]
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python >=3.6                           # [build_platform != target_platform]
+    - python >=3.7                           # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
-    - python >=3.6
+    - poetry-core >=1.0.0a9
+    - python >=3.7
   run:
-    - python >=3.6
-    - typing >=3.6,<4.0
+    - python >=3.7
+    - typing >=3.7,<4.0
 
 test:
   requires:
