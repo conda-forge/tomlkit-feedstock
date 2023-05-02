@@ -1,18 +1,18 @@
-{% set version = "0.11.7" %}
+{% set name = "tomlkit" %}
+{% set version = "0.11.8" %}
 
 package:
-  name: tomlkit
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
-  sha256: f392ef70ad87a672f02519f99967d28a4d3047133e2d1df936511465fbb3791d
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomlkit-{{ version }}.tar.gz
+  sha256: 9330fc7faa1db67b541b28e62018c17d20be733177d290a13b24c62d1614e0c3
 
 build:
-  number: 0
   noarch: python
-  script:
-    - {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   build:
@@ -24,7 +24,6 @@ requirements:
     - python >=3.7
   run:
     - python >=3.7
-    - typing >=3.7,<4.0
 
 test:
   requires:
