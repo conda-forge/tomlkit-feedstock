@@ -1,5 +1,5 @@
 {% set name = "tomlkit" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomlkit-{{ version }}.tar.gz
-  sha256: 01f0477981119c7d8ee0f67ebe0297a7c95b14cf9f4b102b45486deb77018716
+  sha256: 38e1ff8edb991273ec9f6181244a6a391ac30e9f5098e7535640ea6be97a7c86
 
 build:
   noarch: python
