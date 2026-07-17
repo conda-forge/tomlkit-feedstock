@@ -3,7 +3,7 @@ About tomlkit-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tomlkit-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/sdispater/tomlkit
+Home: https://github.com/python-poetry/tomlkit
 
 Package license: MIT
 
